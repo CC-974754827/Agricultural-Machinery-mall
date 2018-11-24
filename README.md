@@ -19,3 +19,4 @@ npm run build
 ```
 npm run lint
 ```
+###移动端农机商城
