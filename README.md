@@ -1,24 +1,3 @@
-# shop
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
 ### 移动端农机商城
 ```
 项目描述：
@@ -69,7 +48,7 @@ Vue-cli3
 （3）弹性盒模型 父元素[display: flex;] 子元素[flex-grow: 1;]
 （4）rem [引入rem.js文件]一种单位，相对于html根元素[rem：root]，以iPhone5为模板，分成6.4份【em：相对于父元素】
 ```
-<font color="#ff0">margin自带8px</font>
+<font color=#ff0>margin自带8px</font>
 
 #### 底部菜单功能--列表
 ```
