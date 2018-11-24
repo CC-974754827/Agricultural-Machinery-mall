@@ -48,10 +48,20 @@ Vue-cli3
 （3）弹性盒模型 父元素[display: flex;] 子元素[flex-grow: 1;]
 （4）rem [引入rem.js文件]一种单位，相对于html根元素[rem：root]，以iPhone5为模板，分成6.4份【em：相对于父元素】
 ```
-<font color=#ff0>margin自带8px</font>
+
+<font color=#ff0>ul自带40px的左内边距padding</font>
+<font color=#ff0>body自带8px外边距margin</font>
 
 #### 底部菜单功能--列表
 ```
 ①自适应：百分比方法适合一部分情况，所以采用弹性盒模型方法
 ②始终位于底部
+
+views/
+  <template></template>
+  <script>export default{}</script>
+  <style lang="scss"></style>
+  
+渲染在何处<router-views></router-views>
+路有链接<router-link></router-link>
 ```
