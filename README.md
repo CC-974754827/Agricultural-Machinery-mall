@@ -48,10 +48,92 @@ Vue-cli3
 （3）弹性盒模型 父元素[display: flex;] 子元素[flex-grow: 1;]
 （4）rem [引入rem.js文件]一种单位，相对于html根元素[rem：root]，以iPhone5为模板，分成6.4份【em：相对于父元素】
 ```
-<font color=#ff0>margin自带8px</font>
+
+<font color=#ff0>ul自带40px的左内边距padding</font>
+<font color=#ff0>body自带8px外边距margin</font>
 
 #### 底部菜单功能--列表
 ```
 ①自适应：百分比方法适合一部分情况，所以采用弹性盒模型方法
 ②始终位于底部
+
+views/
+  <template></template>
+  <script>export default{}</script>
+  <style lang="scss"></style>
+  
+渲染在何处<router-views></router-views>
+路有链接<router-link></router-link>
+```
+
+#### vant 轻量、可靠vue组件库（适用于商城）
+
+其他组件库：
+```
+vux（移动端）
+element（pc端）
+iview（后端管理系统，i18n国际化）
+museui
+```
+命令
+```
+npm：node package manage
+npm run serve:package.json下的scripts的serve[执行]，build[打包]，lint[语法检查]
+dependencies  生产（上线）  【包是--save -S】
+devdependencies  开发    【包是--save-dev -D】【eg：eslint语法检查】
+```
+
+安装
+```
+npm install vant --save
+
+导入全部组件【置于main.js】
+import Vant from 'vant';
+import 'vant/lib/index.css';  //与上面的引入有依赖关系
+Vue.use(Vant);
+
+按需求引入组件
+npm i babel-plugin-import -D
+一款 babel 插件，它会在编译过程中将 import 的写法自动转换为按需引入的方式
+
+// 对于使用 babel7 的用户，可以在 babel.config.js 中配置
+module.exports = {
+  plugins: [
+    ['import', {
+      libraryName: 'vant',
+      libraryDirectory: 'es',
+      style: true
+    }, 'vant']
+  ]
+};
+
+//手动引入main.js
+import { Button, Cell } from 'vant';
+Vue.use(Button).use(Cell);   //jquery的链式操作
+```
+
+轮播图
+```
+原生：
+左右滑动：
+  图片布局方式：水平分布
+  父元素设置溢出隐藏overflow:hidden
+淡入淡出：
+  图片叠在一起
+
+
+vue组件
+图片懒加载
+//图片太多，服务器压力大
+//每次只加载2张
+import Vue from 'vue';
+import { Lazyload } from 'vant';
+// options 为可选参数，无则不传
+Vue.use(Lazyload, options);
+```
+
+热门商品
+```
+Vue-Awesome-Swiper组件，适用于 Vue 的轮播组件，支持服务端渲染和单页应用。
+
 ```
