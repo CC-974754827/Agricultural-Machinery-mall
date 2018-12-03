@@ -117,8 +117,11 @@
       padding-left: 0.2rem;
       padding-top: 1.5rem;
       line-height: 0.5rem;
+      /* 怪异盒模型 */
+      box-sizing: border-box;    
     }
     &-swiper{
+      margin-top: 0.6rem;
       &-content{
         width: 3rem;
         text-align: center;
