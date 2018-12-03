@@ -141,7 +141,10 @@ Vue.use(Lazyload, options);
 Vue-Awesome-Swiper组件，适用于 Vue 的轮播组件，支持服务端渲染和单页应用。
 
 用到怪异盒模型
-　　标准模式：box-sizing:content-box;   宽度：内容
-　　怪异模式：box-sizing:border-box;    宽度：内容+padding+border+margin
+　　标准模式：box-sizing:content-box;   
+　　怪异模式：box-sizing:border-box;    
+    在标准模式下，一个块的总宽度=width+margin(左右)+padding(左右)+border(左右)
+    在怪异模式下，一个块的总宽度=width+margin（左右）（既width已经包含了padding和border值）
+
 标准模式会被设置的padding撑开，而怪异模式则相当于将盒子的大小固定好，再将内容装入盒子。盒子的大小并不会被padding所撑开
 ```
