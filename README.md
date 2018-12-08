@@ -166,3 +166,9 @@ Vue-Awesome-Swiper组件，适用于 Vue 的轮播组件，支持服务端渲染
 flex-basis与width关系？
    只是当flex-basis设置为auto且width（或者height）不为auto时，计算flex-basis的used size时会用到width（或者height）的值。
 ```
+
+
+vue的生命周期(钩子函数:每一个阶段，vue会自动的调用一些方法，容易的在相应阶段进行一些处理)
+```
+
+```
