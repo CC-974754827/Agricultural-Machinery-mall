@@ -54,6 +54,7 @@ Vue-cli3
 
 #### 底部菜单功能--列表
 ```
+（1）
 ①自适应：百分比方法适合一部分情况，所以采用弹性盒模型方法
 //如果子元素因为内容的关系，不能按效果分布，需要在子元素上添加width: 0;
 ②始终位于底部
@@ -65,6 +66,8 @@ views/
   
 渲染在何处<router-views></router-views>
 路有链接<router-link></router-link>
+（2）v-model双向数据绑定
+数据层改变 <===> 界面改变
 ```
 
 #### vant 轻量、可靠vue组件库（适用于商城）
@@ -138,7 +141,28 @@ Vue.use(Lazyload, options);
 Vue-Awesome-Swiper组件，适用于 Vue 的轮播组件，支持服务端渲染和单页应用。
 
 用到怪异盒模型
-　　标准模式：box-sizing:content-box;   宽度：内容
-　　怪异模式：box-sizing:border-box;    宽度：内容+padding+border+margin
+　　标准模式：box-sizing:content-box;   
+　　怪异模式：box-sizing:border-box;    
+    在标准模式下，一个块的总宽度=width+margin(左右)+padding(左右)+border(左右)
+    在怪异模式下，一个块的总宽度=width+margin（左右）（既width已经包含了padding和border值）
+
 标准模式会被设置的padding撑开，而怪异模式则相当于将盒子的大小固定好，再将内容装入盒子。盒子的大小并不会被padding所撑开
+```
+
+
+推荐商品
+```
+运用到弹性盒模型
+父元素：display: flex;
+        flex-wrap:wrap;   //换行
+        justify-content:space-around;   //子元素均匀分布   每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+        【justify-content:space-between; //子元素均匀分布   两端对齐，项目之间的间隔都相等。】
+子元素：flex-basis: 45%    //设置宽度。有它时，width不起作用
+  【flex-basis 设置宽度属性 Flex Items的应用准则
+      content –> width –> flex-basis (limted by max|min-width)
+      如果没有设置flex-basis属性，那么flex-basis的大小就是项目的width属性的大小
+      如果没有设置width属性，那么flex-basis的大小就是项目内容(content)的大小
+   】
+flex-basis与width关系？
+   只是当flex-basis设置为auto且width（或者height）不为auto时，计算flex-basis的used size时会用到width（或者height）的值。
 ```
