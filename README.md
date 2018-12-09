@@ -166,3 +166,85 @@ Vue-Awesome-Swiper组件，适用于 Vue 的轮播组件，支持服务端渲染
 flex-basis与width关系？
    只是当flex-basis设置为auto且width（或者height）不为auto时，计算flex-basis的used size时会用到width（或者height）的值。
 ```
+
+
+vue的生命周期(钩子函数:每一个阶段，vue会自动的调用一些方法，容易的在相应阶段进行一些处理)
+```
+vue的钩子函数/生命周期：每一个阶段，vue会自动调用一些方法，比较方便的在相应阶段进行一些处理
+	created()与mounted()的区别？
+		created:在模板渲染成html前调用，即通常初始化某些属性值，然后再渲染成视图。
+		mounted:在模板渲染成html后调用，通常是初始化页面完成后，再对html的dom节点进行一些需要的操作。
+```
+
+mock.js
+```
+生成随机数据，拦截Ajax请求
+安装mock npm install mockjs --save-dev
+安装ajax npm install axios --save
+
+//拦截ajax请求
+created(){
+  let url = '';
+  axios.get(url).then(res=>{   //url与mock中的url一致
+    console.log(res);
+  });
+}  
+//mock.js
+import Mock from 'mockjs';
+import data from './data.json'   //json文件
+Mock.mock('url',{data:data.list})；
+
+//随机数据
+//属性名和生成规则之间用竖线 | 分隔。
+①Mock.mock('url',{
+  'name|2':'111',   //重复两次
+  'age|18-24':20    //18-24的随机数
+});
+②正则表达式
+Mock.mock('url',{
+  'one':/[a-z][A-Z][0-9]/,
+  'two': /\d{5,10}/       // \d整数 重复5-10次
+});
+③产生；列表  //@占位符
+Mock.mock('url',{
+  'info|10-20':[    //生成10-20条列表
+    {
+      'index|+1':1,    //每次自增1
+      'name': '@first @last',   //真实名字
+      'id': '@integer(10000,99999)',   //整数
+      'date': '@datetime',
+      'img': '@image("200*200")',
+      'text': '@sentence(6,22)'   //随机句子 
+    }
+  ]
+});
+
+//Mock.Random 随机生成信息
+let random = Mock.Random;
+
+
+//统一接口
+src/service.config.js
+<!-- 统一接口 -->//代码优化
+const MOCKURL = 'http://www.long.com'   //mock模拟
+const SERVERURL = '';  //真实接口
+const URL = {
+    getVarietyItem : MOCKURL + 'getVarietyItem',
+}
+//导出
+export default URL;
+```
+
+koa
+```
+koa，基于Node.js[koa,express]，
+	Koa 是一个新的 web 框架，由 Express 幕后的原班人马打造， 致力于成为 web 应用和 API 开发领域中的一个更小、更富有表现力、更健壮的基石。 通过利用 async 函数，Koa 帮你丢弃回调函数，并有力地增强错误处理。 Koa 并没有捆绑任何中间件， 而是提供了一套优雅的方法，帮助您快速而愉快地编写服务端应用程序。 
+	基于koa的框架：egg【企业级框架】,thinkjs
+
+安装
+①安装node ： http://nodejs.org/zh-cn/   
+http://koa.cootcss.com
+koa 依赖node v7.6.0 或 ES2015及更高版本 和async方法支持
+②npm init -y
+③npm install koa --save
+```
