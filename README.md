@@ -179,6 +179,9 @@ vue的钩子函数/生命周期：每一个阶段，vue会自动调用一些方�
 mock.js
 ```
 生成随机数据，拦截Ajax请求
+安装mock npm install mockjs --save-dev
+安装ajax npm install axios --save
+
 //拦截ajax请求
 created(){
   let url = '';
@@ -230,7 +233,18 @@ const URL = {
 }
 //导出
 export default URL;
+```
 
+koa
+```
+koa，基于Node.js[koa,express]，
+	Koa 是一个新的 web 框架，由 Express 幕后的原班人马打造， 致力于成为 web 应用和 API 开发领域中的一个更小、更富有表现力、更健壮的基石。 通过利用 async 函数，Koa 帮你丢弃回调函数，并有力地增强错误处理。 Koa 并没有捆绑任何中间件， 而是提供了一套优雅的方法，帮助您快速而愉快地编写服务端应用程序。 
+	基于koa的框架：egg【企业级框架】,thinkjs
 
-
+安装
+①安装node ： http://nodejs.org/zh-cn/   
+http://koa.cootcss.com
+koa 依赖node v7.6.0 或 ES2015及更高版本 和async方法支持
+②npm init -y
+③npm install koa --save
 ```
