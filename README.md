@@ -245,6 +245,6 @@ koa，基于Node.js[koa,express]，
 ①安装node ： http://nodejs.org/zh-cn/   
 http://koa.cootcss.com
 koa 依赖node v7.6.0 或 ES2015及更高版本 和async方法支持
-②npm init -y
+②npm init -y    //生成package.json
 ③npm install koa --save
 ```
