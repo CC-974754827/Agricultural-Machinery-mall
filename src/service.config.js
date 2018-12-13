@@ -4,6 +4,7 @@ const MOCKURL = 'http://www.long.com/';   //mock模拟
 
 const URL = {
     getVarietyItem : MOCKURL + 'getVarietyItem',
+    getCartItem : MOCKURL + 'getCartItem',
 };
 
 //导出

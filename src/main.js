@@ -9,9 +9,9 @@ import '@/assets/js/rem.js'
 import '@/mock/mock.js';
 
 //按需求引入 
-import { NavBar, Icon, Tabbar, TabbarItem,Swipe, SwipeItem,Lazyload } from 'vant';
-Vue.use(NavBar).use(Icon).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem);
-Vue.use(Lazyload);
+import { NavBar, Icon, Tabbar, TabbarItem,Swipe, SwipeItem,Lazyload,PullRefresh,SubmitBar,Card } from 'vant';
+Vue.use(NavBar).use(Icon).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem).use(Lazyload).use(PullRefresh).use(SubmitBar).use(Card);
+
 new Vue({
   router,
   store,

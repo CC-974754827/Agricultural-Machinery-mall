@@ -10,6 +10,8 @@ let productData = function req(){
             img: Random.dataImage('125x125','朱一龙'+Random.integer(1,100)),
             price: Random.integer(1000,10000),
             owner: Random.cname(),
+            num: Random.integer( 1, 5 ),
+            des: Random.cparagraph( 1 )
         };
         productList.push(product);
     }
@@ -17,3 +19,4 @@ let productData = function req(){
 };
 
 Mock.mock('http://www.long.com/getVarietyItem',productData);
+Mock.mock('http://www.long.com/getCartItem',productData);

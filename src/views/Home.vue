@@ -2,7 +2,7 @@
   <div class="container">
   <!--导航-->
     <div>
-      <van-nav-bar title="首页" class="nav-title">
+      <van-nav-bar title="首页" class="nav-title" @click-left = "onClickLeft" @click-right = "onClickRight">
       <!--slot插槽-->
         <van-icon name="search" slot="left"></van-icon>
         <van-icon name="cart" slot="right"></van-icon>
@@ -146,9 +146,17 @@
     created(){
       let url1 = url.getVarietyItem;
       axios.get(url1).then(res=>{
-        console.log(res);
+        console.log("推荐商品数据加载完成");
         this.varietyItems = res.data;
       });
+    },
+    methods:{
+      onClickLeft(){
+        console.log("搜索");
+      },
+      onClickRight(){
+        console.log("购物车");
+      }
     }
   }
 
